@@ -464,6 +464,12 @@ export interface SessionRecordingAIConfig {
     important_user_properties: string[]
 }
 
+export interface ProjectType {
+    id: number
+    name: string
+    organization_id: number
+    created_at: string
+}
 export interface TeamType extends TeamBasicType {
     created_at: string
     updated_at: string
@@ -3242,6 +3248,7 @@ export type EventOrPropType = EventDefinition & PropertyDefinition
 
 export interface AppContext {
     current_user: UserType | null
+    current_project: ProjectType | null
     current_team: TeamType | TeamPublicType | null
     preflight: PreflightStatus
     default_event_name: string
